@@ -112,18 +112,61 @@ function logic3() {
   console.log([] == []); //false
 }
 // logic3()
+//======================//
 function logic4() {
   let x = 4;
   y = x++;
   console.log(x, y);
 }
-logic4();
+// logic4();
 
-function logic5(){
+//===========================//
+function logic5() {
   var x;
-  if(x>20){
-    x=50;
+  if (x > 20) {
+    x = 50;
   }
-  console.log(x)
+  console.log(x);
 }
-logic5();
+// logic5();
+//===========How would you check if a number is an integer===========//
+function isInt(num) {
+  return num % 1 === 0;
+}
+// console.log(isInt(4)); // true
+// console.log(isInt(12.2)); // false
+// console.log(isInt(0.3)); // false
+
+//==Given two strings, return true if they are anagrams of one another==//
+function isAnagram(first, second) {
+  //An anagram of a string is another string that contains the same characters, only the order of characters can be different. For example, “abcd” and “dabc” are anagram of each other.
+
+  // For case insensitivity, change both words to lowercase.
+  var a = first.toLowerCase();
+  var b = second.toLowerCase();
+
+  // Sort the strings, and join the resulting array to a string. Compare the results
+  a = a.split('').sort().join('');
+  b = b.split('').sort().join('');
+
+  return a === b;
+}
+console.log(isAnagram('Mary', 'Army'));
+
+//==================//
+//below code would give output 1undefined. If condition statement evaluate using eval so eval(function f() {}) which return function f() {} which is true so inside if statement code executes. typeof f return undefined because if statement code executes at run time, so statement inside if condition evaluated at run time.
+var y = 1;
+if (function f() {}) {
+  y += typeof f;
+}
+console.log(y);
+
+//================logic=======//
+var foo = 'outside';
+function logIt() {
+  console.log(foo);
+  var foo = 'inside';
+}
+logIt();
+
+ 
