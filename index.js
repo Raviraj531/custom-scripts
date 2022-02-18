@@ -169,4 +169,16 @@ function logIt() {
 }
 logIt();
 
- 
+//=================logic==============//
+function logic6() {
+  a = 2;
+}
+logic6();
+console.log(a);
+//==========Logic===========
+let arr = [1, 2];
+function logic7(array) {
+  array = [1, 2, 3];
+}
+logic7(arr);
+console.log(arr);
