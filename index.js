@@ -167,18 +167,63 @@ function logIt() {
   console.log(foo);
   var foo = 'inside';
 }
-logIt();
+// logIt();
 
 //=================logic==============//
 function logic6() {
   a = 2;
 }
-logic6();
-console.log(a);
+// logic6();
+// console.log(a);
 //==========Logic===========
 let arr = [1, 2];
 function logic7(array) {
   array = [1, 2, 3];
 }
-logic7(arr);
-console.log(arr);
+// logic7(arr);
+// console.log(arr);
+//=============logic==============//
+console.log(2 + '2');
+console.log(2 - '2'); // '-' symbol will work even with strings
+
+//=============arrow functions scope==========//
+function logic8() {
+  const obj = {
+    x: 10,
+    y: 20,
+    sum: () => this.x + this.y,
+    multiply: function () {
+      return this.x * this.y;
+    },
+  };
+
+  console.log('sum' + obj.sum());
+  console.log(obj.multiply());
+}
+// logic8()
+
+//==========promise setTimeout===========
+function logic9() {
+  const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('rejected');
+    }, 3000);
+  });
+
+  async function asyncFunc() {
+    const result = await promise;
+    console.log(result);
+    console.log('hello1');
+  }
+  asyncFunc();
+}
+// logic9();
+
+//=============map and filter==========
+function logic10() {
+  let a = [1, 2, 3, 4, 5, 6];
+  let b = a.map((item) => item / 2 == 0);
+  let c = a.filter((item) => item / 2 == 0);
+  console.log(b, c);
+}
+logic10();
