@@ -227,3 +227,26 @@ function logic10() {
   console.log(b, c);
 }
 logic10();
+
+//============compare dates===========
+
+function compareDates() {
+  var d1 = new Date('2022-01-21');
+  var d2 = new Date();
+  console.log(d1.getTime() === d2.getTime());
+}
+compareDates();
+
+//============compare Arrays=======
+function CompareArrays() {
+  var array1 = [2, 3, 1, 4];
+  var array2 = [1, 2, 3, 4];
+  console.log(array1.toString() === array2.toString());
+  var isSame =
+    array1.length === array2.length &&
+    array1.sort().every(function (value, index) {
+      return value === array2[index];
+    });
+  console.log('Compare Arrays ' + isSame);
+}
+CompareArrays();
