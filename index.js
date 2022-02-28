@@ -251,3 +251,41 @@ function CompareArrays() {
   console.log('Compare Arrays ' + isSame);
 }
 CompareArrays();
+
+//=========find duplicates in Array========
+function findDuplicates() {
+  const yourArray = [1, 1, 2, 3, 4, 5, 5];
+  let duplicates = [];
+  const tempArray = [...yourArray].sort();
+  for (let i = 0; i < tempArray.length; i++) {
+    if (tempArray[i + 1] === tempArray[i]) {
+      duplicates.push(tempArray[i]);
+    }
+  }
+  console.log('duplicates ', duplicates);
+}
+// findDuplicates();
+
+//==========remove duplicates from Array=======
+function removeDuplicates() {
+  let array = [1, 2, 3, 1, 2, 3];
+  array = [...new Set(array)];
+  console.log('removeduplicates with array', array);
+  let arrayObj = [
+    { id: 1, name: 'ravi' },
+    { id: 1, name: 'ravi' },
+  ];
+  // arrayObj = arrayObj.filter(
+  //   (v, i, a) => a.findIndex((t) => t.id === v.id) === i
+  // );
+  
+  // -----------Unique by multiple properties ( id and name )
+
+  arrayObj = arrayObj.filter(
+    (v, i, a) =>
+      a.findIndex((t) => ['id', 'name'].every((k) => t[k] === v[k])) === i
+  );
+
+  console.log('removeduplicates with array of objects', arrayObj);
+}
+removeDuplicates();
