@@ -63,8 +63,8 @@ function logic1() {
     var a = (b = 3);
   })();
 
-  console.log(typeof a);
-  console.log(typeof b);
+  console.log('typeof a', typeof a);
+  console.log('typeof b', typeof b);
 }
 // logic1();
 
@@ -73,22 +73,22 @@ function logic1() {
 function logic2() {
   for (var i = 0; i < 5; i++) {
     setTimeout(function () {
-      console.log(i);
-    }, i * 1000);
+      console.log('normal var', i);
+    }, 1000);
   }
   //if we nedd 0 1 2 3 4 //
   for (var i = 0; i < 5; i++) {
     (function (x) {
       setTimeout(function () {
-        console.log(x);
-      }, x * 1000);
+        console.log('function var', x);
+      }, 1000);
     })(i);
   }
   // using let method==/
   for (let i = 0; i < 5; i++) {
     setTimeout(function () {
       console.log('let', i);
-    }, i * 1000);
+    }, 1000);
   }
 }
 // logic2()
@@ -151,7 +151,7 @@ function isAnagram(first, second) {
 
   return a === b;
 }
-console.log(isAnagram('Mary', 'Army'));
+// console.log(isAnagram('Mary', 'Army'));
 
 //==================//
 //below code would give output 1undefined. If condition statement evaluate using eval so eval(function f() {}) which return function f() {} which is true so inside if statement code executes. typeof f return undefined because if statement code executes at run time, so statement inside if condition evaluated at run time.
@@ -164,7 +164,7 @@ console.log(y);
 //================logic=======//
 var foo = 'outside';
 function logIt() {
-  console.log(foo);
+  console.log('foo', foo);
   var foo = 'inside';
 }
 // logIt();
@@ -235,7 +235,7 @@ function compareDates() {
   var d2 = new Date();
   console.log(d1.getTime() === d2.getTime());
 }
-compareDates();
+// compareDates();
 
 //============compare Arrays=======
 function CompareArrays() {
@@ -250,7 +250,7 @@ function CompareArrays() {
     });
   console.log('Compare Arrays ' + isSame);
 }
-CompareArrays();
+// CompareArrays();
 
 //=========find duplicates in Array========
 function findDuplicates() {
@@ -278,7 +278,7 @@ function removeDuplicates() {
   // arrayObj = arrayObj.filter(
   //   (v, i, a) => a.findIndex((t) => t.id === v.id) === i
   // );
-  
+
   // -----------Unique by multiple properties ( id and name )
 
   arrayObj = arrayObj.filter(
@@ -288,4 +288,4 @@ function removeDuplicates() {
 
   console.log('removeduplicates with array of objects', arrayObj);
 }
-removeDuplicates();
+// removeDuplicates();
