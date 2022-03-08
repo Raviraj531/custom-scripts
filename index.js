@@ -289,3 +289,13 @@ function removeDuplicates() {
   console.log('removeduplicates with array of objects', arrayObj);
 }
 // removeDuplicates();
+
+//Reduce xample
+
+function reduceExample() {
+  let arr = [{ a: [1, 2, 3] }, { a: [1, 2, 3] }];
+  //need output [1,2,3,1,2,3]
+  arr = arr.reduce((x, y) => x.concat(y.a), []);
+  console.log('reduce', arr);
+}
+reduceExample();
