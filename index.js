@@ -271,6 +271,11 @@ function removeDuplicates() {
   let array = [1, 2, 3, 1, 2, 3];
   array = [...new Set(array)];
   console.log('removeduplicates with array', array);
+  //====without set====//
+  array = array.filter(function (item, index, inputArray) {
+    return inputArray.indexOf(item) == index;
+  });
+
   let arrayObj = [
     { id: 1, name: 'ravi' },
     { id: 1, name: 'ravi' },
@@ -303,16 +308,16 @@ reduceExample();
 function sortArray(arr) {
   var temp = [];
   if (Array.isArray(arr)) {
-      for (let i = 0; i < arr.length; i++) {
-          for (let j = 0; j < arr.length; j++) {
-              if (arr[i] < arr[j]) {
-                  temp = arr[j];
-                  arr[j] = arr[i];
-                  arr[i] = temp;
-              }
-          }
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = 0; j < arr.length; j++) {
+        if (arr[i] < arr[j]) {
+          temp = arr[j];
+          arr[j] = arr[i];
+          arr[i] = temp;
+        }
       }
-      return arr;
+    }
+    return arr;
   }
 }
 
