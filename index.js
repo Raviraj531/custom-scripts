@@ -323,14 +323,14 @@ function sortArray(arr) {
 
 console.log(sortArray([2, 6, 0, 4, 3, 4, 3, 5, 9, 6, 12, 43, 6]));
 
-function Reverse(str){
-  let a=str.split('').reverse().join('')
+function Reverse(str) {
+  let a = str.split('').reverse().join('');
   console.log(a);
   //Uisng loop
-  let reversed = "";
+  let reversed = '';
   for (let i = str.length - 1; i >= 0; i--) {
     reversed += str[i];
   }
-  console.log(reversed)
+  console.log(reversed);
 }
-Reverse('test')
+Reverse('test');
