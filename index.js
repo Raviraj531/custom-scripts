@@ -43,6 +43,16 @@ function Reverse(str) {
   str = str.split('').reverse().join('');
   console.log(str);
 }
+function ReverseLoop(str) {
+  let reversed = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversed += str[i];
+  }
+
+  console.log('reverseloop ', reversed);
+  return reversed;
+}
+//  ReverseLoop('Hello');
 // Reverse('Hello');
 
 //==========Empty an array 3 methods===========//
@@ -60,13 +70,14 @@ function Emptyarray() {
 //=========type=======//
 function logic1() {
   (function () {
-    var a = (b = 3);
+    var a = b = 3;
+    console.log('a',a)
   })();
 
   console.log('typeof a', typeof a);
   console.log('typeof b', typeof b);
 }
-// logic1();
+logic1();
 
 //======logic========//
 //=======this will print 5 5 5 5 5==//
@@ -78,9 +89,9 @@ function logic2() {
   }
   //if we nedd 0 1 2 3 4 //
   for (var i = 0; i < 5; i++) {
-    (function (x) {
+    (function (i) {
       setTimeout(function () {
-        console.log('function var', x);
+        console.log('function var', i);
       }, 1000);
     })(i);
   }
@@ -91,7 +102,7 @@ function logic2() {
     }, 1000);
   }
 }
-// logic2()
+logic2()
 
 //====Logics====//
 function logic3() {
